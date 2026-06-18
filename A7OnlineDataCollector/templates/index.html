@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title> Data Collector App</title>
+  <head>
+    <link href="../static/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Collecting Height</h1>
+      <h3>Please fill in the entries to get population statistics on height</h3>
+      <div class="message">
+        {{text | safe}}
+      </div>
+      <form action="{{url_for('success')}}" method="POST" enctype="multipart/form-data">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="height">Height (in cm):</label><br>
+        <input type="number" id="height" name="height" required><br><br>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
